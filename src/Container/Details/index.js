@@ -45,7 +45,7 @@ const DetailsContainer = () => {
     try{
       const {data} = await axios.get(`https://api.themoviedb.org/3/${_media_type}/${id}/credits?api_key=${API_KEY}&language=en-US`);
       setCredits(data.cast);
-      console.log('sdata',  data);
+      //console.log('sdata',  data);
     } catch (error) {
       console.error(error)
     }
@@ -58,7 +58,7 @@ const DetailsContainer = () => {
     //eslint-disable-next-line
   }, [])
 
-  const renderDataHtml = ()=>{
+  const renderDataHtml = () => {
     const ImageURL = content.poster_path ? img_300 + content.poster_path : img_not_available;
     const tagline = content.tagline || '';
     const vote_average = parseInt(content.vote_average);
@@ -110,7 +110,7 @@ const DetailsContainer = () => {
                             <span className='linkTag'> {budget}</span></li> : ''
                         }
                         
-                        <li><span>Country:</span> <span className='linkTag'>{origin_country}</span> </li>
+                        <li><span>Country:</span> <span className='linkTag'>{origin_country}</span></li>
                     </ul>
                     <div className="description_readmore_wrapper ">
                         {overview}
@@ -125,7 +125,7 @@ const DetailsContainer = () => {
         </Col>
       </Row>
     )
-}
+  }
 
   return (
     <>
@@ -136,19 +136,19 @@ const DetailsContainer = () => {
           }
         </Container>
         <section className='section'>
-                <div  className='contentHead'>
-                    <Container>
-                        <Row>
-                            <Col className='col-12'>
-                                {
-                                    credits && credits.length > 0 ? <DarkVariantExample data={credits} /> : 'Lading data...'
-                                }
-                                
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
-            </section>
+          <div  className='contentHead'>
+              <Container>
+                  <Row>
+                      <Col className='col-12'>
+                          {
+                              credits && credits.length > 0 ? <DarkVariantExample data={credits} /> : 'Lading data...'
+                          }
+                          
+                      </Col>
+                  </Row>
+              </Container>
+          </div>
+        </section>
       </main>
     </>
   )

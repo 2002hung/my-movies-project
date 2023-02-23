@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 
 import CardMoviesComponents from '../../Components/CardMovies';
+import PaginationComponent from '../../Components/Pagination';
 
 const HomeContainer = () => {
   const [content, setContent] = useState([]);
@@ -13,16 +14,27 @@ const HomeContainer = () => {
   const [paginationno, setPaginationno] = useState(0);
   
   const API_KEY = process.env.REACT_APP_NOT_SECRET_CODE;
+  
   const GetDataTrending = async () => {
     const {data} = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&page=${pageno}`)
     setContent(data.results)
     setPaginationno(data.total_pages)
-    console.log('data', data)
+    //console.log('data', data)
   }
 
   useEffect(() => {
     GetDataTrending()
   }, [])
+
+  const handleClick = (number) => {
+    setPageno(number)
+  }
+
+  useEffect(()=>{
+    //console.log('Trending Component didupdate mount');
+    GetDataTrending();
+    //eslint-disable-next-line
+  }, [pageno])
 
   return (
     <main className='homePage'>
@@ -40,6 +52,9 @@ const HomeContainer = () => {
                 <CardMoviesComponents key={item.id} data={item} mediaType="tv" />
               )
             }) : 'Loading Content...'
+          }
+          {
+            paginationno && paginationno > 1 ? <PaginationComponent maxnum={paginationno} activenum={pageno} handleClick={handleClick} /> : ''
           }
         </Row>
       </Container>

@@ -1,17 +1,19 @@
 .myCarWrap{
     margin:20px 10px 50px 10px;
-
 }
+
 .carouselItem{
     position: relative;
     margin:5px;
 }
+
 .carouselItem img{
     width:100%;
     height: 100%;
     border-radius: 20px;
     border: solid 2px #ff5860;
 }
+
 .carouselItemText {
     position: absolute;
     bottom: 2px;
