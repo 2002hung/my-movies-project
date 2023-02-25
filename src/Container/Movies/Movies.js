@@ -4,9 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 
-import CardMoviesComponents from '../../Components/CardMovies';
-import PaginationComponent from '../../Components/Pagination';
-import LeftListBarComponent from '../../Components/LeftListBar';
+import { CardMoviesComponents, PaginationComponent, LeftListBarComponent } from '../../Components/index';
 
 import useGenres from '../../Hooks/useGenres';
 

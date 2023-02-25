@@ -7,7 +7,7 @@ import './style.css';
 
 import { BsFacebook, BsLinkedin, BsTwitter, BsStackOverflow, BsGoogle, BsGithub, BsYoutube } from "react-icons/bs";
 
-const FooterComponent = () => {
+const FooterComponents = () => {
   return (
       <>
         <footer className='myFooter'>
@@ -66,4 +66,4 @@ const FooterComponent = () => {
   )
 }
 
-export default FooterComponent;
+export default FooterComponents;

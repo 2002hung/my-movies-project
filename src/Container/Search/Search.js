@@ -5,9 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 import axios from 'axios';
 
-import CardMoviesComponents from '../../Components/CardMovies';
-import PaginationComponent from '../../Components/Pagination';
-import SearchBarCardComponents from '../../Components/SearchBox';
+import { CardMoviesComponents, PaginationComponent, SearchBarCardComponents } from '../../Components';
 
 const SearchContainer = () => {
   const [content, setContent] = useState([]);

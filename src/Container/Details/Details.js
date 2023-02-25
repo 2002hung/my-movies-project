@@ -8,7 +8,7 @@ import axios from 'axios';
 import { img_300, img_not_available } from '../../Config';
 
 import './details.css';
-import DarkVariantExample from '../../Components/Carousel';
+import { DarkVariantExample }from '../../Components';
 
 const DetailsContainer = () => {
   const params = useParams();

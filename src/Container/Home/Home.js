@@ -5,8 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 import axios from 'axios';
 
-import CardMoviesComponents from '../../Components/CardMovies';
-import PaginationComponent from '../../Components/Pagination';
+import { CardMoviesComponents, PaginationComponent } from '../../Components';
 
 const HomeContainer = () => {
   const [content, setContent] = useState([]);

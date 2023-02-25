@@ -1,16 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import HomeContainer from '../Container/Home';
-import AboutContainer from '../Container/About';
-import MoviesContainer from '../Container/Movies';
-import TvSeriesContainer from '../Container/TVSeries';
-import SearchContainer from '../Container/Search';
-import DetailsContainer from '../Container/Details';
-import ContactContainer from '../Container/Contact';
+import { HomeContainer, AboutContainer, 
+  MoviesContainer, TvSeriesContainer, 
+  SearchContainer, DetailsContainer, 
+  ContactContainer 
+} from '../Container/index';
 
-import HeaderComponents from '../Components/Header';
-import FooterComponents from '../Components/Footer';
+import { HeaderComponents, FooterComponents } from '../Components';
 
 const RouterContainer = () => {
   return (
